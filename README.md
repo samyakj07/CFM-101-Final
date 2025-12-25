@@ -1,14 +1,36 @@
-Possible Strategies:
+# 📈 CFM 101 Robo-Advising Challenge — Market Meet Strategy (Portfolio Optimization)
 
-Strategies:
+**Team Number:** 09  
+**Team Members:** Aryan Singh, Jack Smith, Samyak Jain  
+**Strategy Chosen:** **Market Meet**
 
-Depict the portfolio weighting based on the index (S&P), i.e. use close sector weighting relative to the index instead of flooding one sector.
+## 🧠 Overview
 
-Use big diversified companies
+In this project, it builds a portfolio fufilling the market-meet strategy by:
+- filtering a list of tickers based on specific requirements
+- enforcing liquidity + market-cap constraints per assignment instructions
+- removing high-volatility stocks
+- selecting stocks that correlate with the benchmark to the highest degree
+- converting final weights into shares while accounting for FX + fees in order to build a strong portfolio
 
-For the weighting, keep it equally weighted in the beginning, then we can shift it accordingly
+The benchmark is created as an **equally-weighted average** of daily returns from:
+- **S&P 500 (`^GSPC`)**
+- **TSX Composite (`^GSPTSE`)**
 
-Using yfinance, we can use historical data for beta to estimate each stock’s beta; if they are less than or more than 1, shift accordingly.
+## Key Outputs
+- Filtered ticker DataFrame
+- Benchmark sector targets (TSX + S&P sector weights)
+- Volatility filtering (by sector)
+- Stock selection by benchmark correlation
+- Final portfolio weights (sector caps + stock caps)
+- Final CSV output: Stocks_Group_09.csv
 
-Avoid penny stocks because they don’t move well with the market.
-
+## Libraries Used
+- IPython.display  
+- pandas  
+- numpy  
+- numpy-financial  
+- yfinance  
+- matplotlib  
+- random  
+- datetime
